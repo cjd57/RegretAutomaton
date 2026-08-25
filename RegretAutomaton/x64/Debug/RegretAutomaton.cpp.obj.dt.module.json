@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "RegretAutomaton\\x64\\Debug\\RegretAutomaton.obj",
+            "outputs": [
+                "RegretAutomaton\\x64\\Debug\\RegretAutomaton.cpp.obj.dt.module.json",
+                "RegretAutomaton\\x64\\Debug\\RegretAutomaton.cpp.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

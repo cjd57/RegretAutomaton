@@ -1,0 +1,22 @@
+﻿  auto.cpp
+D:\RegretAutomata\auto.cpp(167,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+      D:\RegretAutomata\auto.cpp(167,11):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\RegretAutomata\auto.cpp(475,33):
+          查看对正在编译的 类 模板 实例化“RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>”的引用
+          D:\RegretAutomata\auto.cpp(46,10):
+          在编译类“RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::Chooser”时
+          D:\RegretAutomata\auto.cpp(149,21):
+          在编译 类 模板 成员函数“std::vector<int,std::allocator<int>> RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::Chooser::MITM(const std::vector<RegretingGreed::Transform,std::allocator<RegretingGreed::Transform>> &)”时
+              D:\RegretAutomata\auto.cpp(296,5):
+              请参阅 "RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::Chooser::selectBestCombination" 中对 "RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::Chooser::MITM" 的第一个引用
+              D:\RegretAutomata\auto.cpp(355,20):
+              请参阅 "RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::solve" 中对 "RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::Chooser::selectBestCombination" 的第一个引用
+              D:\RegretAutomata\auto.cpp(476,24):
+              请参阅 "main" 中对 "RegretingGreed::RegretAutomaton<3,1,int ita(int,int),std::array<int,3> C(int)>::solve" 的第一个引用
+  
+D:\RegretAutomata\auto.cpp(183,20): warning C4334: “<<”: 32 位移位的结果被隐式转换为 64 位(是否希望进行 64 位移位?)
+D:\RegretAutomata\auto.cpp(210,21): warning C4334: “<<”: 32 位移位的结果被隐式转换为 64 位(是否希望进行 64 位移位?)
+  auto.vcxproj -> D:\RegretAutomata\x64\Debug\auto.exe
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

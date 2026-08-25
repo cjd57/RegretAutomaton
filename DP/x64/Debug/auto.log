@@ -1,0 +1,6 @@
+﻿  DP.cpp
+D:\RegretAutomata\DP.cpp(12,14): warning C4244: “初始化”: 从“double”转换到“ll”，可能丢失数据
+D:\RegretAutomata\DP.cpp(12,14): warning C4056: 浮点常量算术溢出
+  DP.vcxproj -> D:\RegretAutomata\x64\Debug\DP.exe
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

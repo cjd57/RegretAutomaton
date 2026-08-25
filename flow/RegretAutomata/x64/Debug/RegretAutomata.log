@@ -1,0 +1,14 @@
+﻿  flow.cpp
+D:\RegretAutomata\flow.cpp(31,26): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+D:\RegretAutomata\flow.cpp(31,26): warning C4267:         with
+D:\RegretAutomata\flow.cpp(31,26): warning C4267:         [
+D:\RegretAutomata\flow.cpp(31,26): warning C4267:             _Ty=int
+D:\RegretAutomata\flow.cpp(31,26): warning C4267:         ]
+D:\RegretAutomata\flow.cpp(33,26): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+D:\RegretAutomata\flow.cpp(33,26): warning C4267:         with
+D:\RegretAutomata\flow.cpp(33,26): warning C4267:         [
+D:\RegretAutomata\flow.cpp(33,26): warning C4267:             _Ty=int
+D:\RegretAutomata\flow.cpp(33,26): warning C4267:         ]
+  flow.vcxproj -> D:\RegretAutomata\x64\Debug\flow.exe
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
