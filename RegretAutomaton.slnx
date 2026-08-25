@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="auto/auto.vcxproj" Id="4a41240c-7fb9-43a0-913a-f4ec0186958c" />
+  <Project Path="DP/DP.vcxproj" Id="f88e1af5-293a-4f8c-97a2-d6a8d214de07" />
+  <Project Path="flow/flow.vcxproj" Id="ed115050-0cac-4e20-b5f1-e91b82e565d7" />
+  <Project Path="regret/regret.vcxproj" Id="7fc3810a-0222-4827-a307-9ee57ab071a1" />
+  <Project Path="RegretAutomaton.vcxproj" Id="513d8e6f-f875-4700-8d7f-bad2fa10c246" />
+</Solution>
