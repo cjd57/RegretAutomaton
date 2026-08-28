@@ -17,7 +17,7 @@ namespace RegretingGreed {
 	};
 	using Regret = std::vector<Transform>;
 	template<int D, int K, int (*_ita)(int, int), std::array<int, D>(*_C)(int)>
-	struct RegretAutomaton {
+	struct RegretAutomata {
 		using ll = long long;
 		int N, Delta;
 
@@ -59,8 +59,8 @@ namespace RegretingGreed {
 		std::array<int, D> curVals{};
 
 		struct Chooser {
-			RegretAutomaton &th;
-			Chooser(RegretAutomaton &fa) : th(fa) {}
+			RegretAutomata &th;
+			Chooser(RegretAutomata &fa) : th(fa) {}
 			// cached arrays for the most recent candidate list
 			std::vector<std::array<int, D>> cachedC;
 			std::vector<ll> cachedI;
@@ -91,7 +91,7 @@ namespace RegretingGreed {
 					groups.push_back(kv.second);
 
 				// parent pointers for backtracking: parent[g][d] = {prev_d, opIdx(-1 none)}
-				std::vector<std::vector<std::pair<int, int>>> parent(groups.size(), std::vector<std::pair<int, int>>(size, { -2, -2 }));
+				std::vector<std::vector<std::pair<int, int>>> parent(groups.size(), std::vector<std::pair<int, int>>(size, {-2, -2}));
 				dp[offset] = 0;
 				for (int g = 0; g < (int)groups.size(); ++g) {
 					std::fill(ndp.begin(), ndp.end(), LLONG_MAX);
@@ -101,7 +101,7 @@ namespace RegretingGreed {
 						// option: take none from this group
 						if (dp[d] < ndp[d]) {
 							ndp[d] = dp[d];
-							parent[g][d] = { d, -1 };
+							parent[g][d] = {d, -1};
 						}
 						for (int opIdx : groups[g]) {
 							int delta = cachedC[opIdx][0];
@@ -111,7 +111,7 @@ namespace RegretingGreed {
 							long long ncost = dp[d] + cachedI[opIdx];
 							if (ncost < ndp[nd]) {
 								ndp[nd] = ncost;
-								parent[g][nd] = { d, opIdx };
+								parent[g][nd] = {d, opIdx};
 							}
 						}
 					}
@@ -120,14 +120,8 @@ namespace RegretingGreed {
 
 				long long bestCost = LLONG_MAX;
 				int bestD = -1;
-				for (int d = offset; d < size; ++d) {
+				for (int d = offset + 1; d < size; ++d) {
 					if (dp[d] < bestCost) {
-						bool ok = 0;
-						for (int g = (int)parent.size() - 1; g >= 0; --g)
-							if (parent[g][d].second != -1)
-								ok = 1;
-						if (!ok)
-							continue;
 						bestCost = dp[d];
 						bestD = d;
 					}
@@ -289,7 +283,7 @@ namespace RegretingGreed {
 					for (auto &p : it->second) {
 						const RightEntryInfo &info = p.second;
 						int totalMain = lMain + info.mainDelta;
-						if (totalMain < 0)
+						if (totalMain <= 0)
 							continue;
 						ll cost = l.cost + info.cost;
 						if (cost < bestCost) {
@@ -401,10 +395,10 @@ namespace RegretingGreed {
 			return std::optional<ll>(totalCost);
 		}
 
-		RegretAutomaton(int n_,
-		                const std::vector<int> &initStates,
-		                std::function<std::vector<Transform>(int, const int &)> getTransitions_,
-		                int maxDeltaAbs_)
+		RegretAutomata(int n_,
+		               const std::vector<int> &initStates,
+		               std::function<std::vector<Transform>(int, const int &)> getTransitions_,
+		               int maxDeltaAbs_)
 			: N(n_), states(initStates), curVals{},
 			  Delta(maxDeltaAbs_), getTransitions(getTransitions_),
 			  sec(*this) {
@@ -451,7 +445,7 @@ int main() {
 	c.resize(n);
 	for (int i = 0; i < n; ++i)
 		cin >> a[i] >> c[i];
-	auto *ra = new RegretingGreed::RegretAutomaton<1, 1, ita, C>(n, vector<int>(n, 0), getTran, 3);
+	auto *ra = new RegretingGreed::RegretAutomata<1, 1, ita, C>(n, vector<int>(n, 0), getTran, 3);
 	cout << ra->solve(w).value() << endl;
 	for (int i = 0; i < n; ++i)
 		cout << ra->states[i];
